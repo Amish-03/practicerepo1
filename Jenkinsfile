@@ -5,25 +5,25 @@ pipeline {
 
         stage('Compile') {
             steps {
-                bat '''
-                cd C:\ProgramData\Jenkins\.jenkins\workspace\LoginServiceTesting\configserver
-                mvnw.cmd clean compile'''
+                dir('configserver') {
+                    bat 'mvnw.cmd clean compile'
+                }
             }
         }
 
         stage('Test') {
             steps {
-                bat '''
-                cd C:\ProgramData\Jenkins\.jenkins\workspace\LoginServiceTesting\configserver
-                mvnw.cmd test'''
+                dir('configserver') {
+                    bat 'mvnw.cmd test'
+                }
             }
         }
 
         stage('Package') {
             steps {
-                bat '''
-                cd C:\ProgramData\Jenkins\.jenkins\workspace\LoginServiceTesting\configserver
-                mvnw.cmd package -DskipTests'''
+                dir('configserver') {
+                    bat 'mvnw.cmd package -DskipTests'
+                }
             }
         }
     }
@@ -38,3 +38,4 @@ pipeline {
         }
     }
 }
+
