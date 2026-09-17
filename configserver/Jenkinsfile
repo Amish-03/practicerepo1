@@ -7,7 +7,7 @@ C:\ProgramData\Jenkins\.jenkins\workspace\LoginServiceTesting
             steps {
                 bat '''
                 cd C:\ProgramData\Jenkins\.jenkins\workspace\LoginServiceTesting\configserver
-                ./mvnw clean compile'''
+                mvnw.cmd clean compile'''
             }
         }
 
@@ -15,7 +15,7 @@ C:\ProgramData\Jenkins\.jenkins\workspace\LoginServiceTesting
             steps {
                 bat '''
                 cd C:\ProgramData\Jenkins\.jenkins\workspace\LoginServiceTesting\configserver
-                ./mvnw test'''
+                mvnw.cmd test'''
             }
         }
 
@@ -23,7 +23,7 @@ C:\ProgramData\Jenkins\.jenkins\workspace\LoginServiceTesting
             steps {
                 bat '''
                 cd C:\ProgramData\Jenkins\.jenkins\workspace\LoginServiceTesting\configserver
-                ./mvnw package -DskipTests'''
+                mvnw.cmd package -DskipTests'''
             }
         }
     }
