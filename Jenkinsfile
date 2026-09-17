@@ -1,29 +1,29 @@
 pipeline {
     agent any
-
+C:\ProgramData\Jenkins\.jenkins\workspace\LoginServiceTesting
     stages {
-
-        stage('Checkout') {
-            steps {
-                checkout dev
-            }
-        }
 
         stage('Compile') {
             steps {
-                bat '''mvn clean compile'''
+                bat '''
+                cd C:\ProgramData\Jenkins\.jenkins\workspace\LoginServiceTesting\configserver
+                mvnw.cmd clean compile'''
             }
         }
 
         stage('Test') {
             steps {
-                bat '''mvn test'''
+                bat '''
+                cd C:\ProgramData\Jenkins\.jenkins\workspace\LoginServiceTesting\configserver
+                mvnw.cmd test'''
             }
         }
 
         stage('Package') {
             steps {
-                bat 'mvn package -DskipTests'
+                bat '''
+                cd C:\ProgramData\Jenkins\.jenkins\workspace\LoginServiceTesting\configserver
+                mvnw.cmd package -DskipTests'''
             }
         }
     }
