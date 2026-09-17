@@ -1,6 +1,6 @@
 pipeline {
     agent any
-C:\ProgramData\Jenkins\.jenkins\workspace\LoginServiceTesting
+
     stages {
 
         stage('Compile') {
